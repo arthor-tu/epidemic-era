@@ -47,17 +47,13 @@ const scroll_sidebar_interval = () => {
  */
 const active_index_plus = (val = 1) => {
   if (val > 0) {
-    if (active_index.value > eventsData.length - 1) {
-      return
-    } else if (active_index.value == eventsData.length - 1) {
+    if (active_index.value >= eventsData.length - 1) {
       active_index.value = 0
     } else {
       active_index.value += val
     }
   } else if (val < 0) {
-    if (active_index.value < 0) {
-      return
-    } else if (active_index.value == 0) {
+    if (active_index.value <= 0) {
       active_index.value = eventsData.length - 1
     } else {
       active_index.value += val
